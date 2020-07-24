@@ -1,0 +1,41 @@
+<!--
+  ~ Copyright (c) Akveo 2019. All Rights Reserved.
+  ~ Licensed under the Single Application / Multi Application License.
+  ~ See LICENSE_SINGLE_APP / LICENSE_MULTI_APP in the 'docs' folder for license information on type of purchased license.
+  -->
+
+<a
+  nbButton
+  status="primary"
+  hero
+  routerLink="../add"
+  style="margin-bottom: 10px;"
+  >Add</a
+>
+<nb-card>
+  <nb-card-header>Contacts</nb-card-header>
+  <nb-card-body>
+    <table [nbTreeGrid]="contactsDataSource" equalColumnsWidth>
+      <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="columnsToShow"></tr>
+      <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: columnsToShow"></tr>
+
+      <ng-container
+        *ngFor="let column of allColumns"
+        [nbTreeGridColumnDef]="column.key"
+      >
+        <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>{{column.label}}</th>
+        <td nbTreeGridCell *nbTreeGridCellDef="let row">
+          {{ row.data[column.key] }}
+        </td>
+      </ng-container>
+
+      <ng-container [nbTreeGridColumnDef]="'actions'">
+        <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef></th>
+        <td nbTreeGridCell *nbTreeGridCellDef="let row">
+          <a [routerLink]="['../edit', row.data.id]" nbButton outline size="small" status="primary"><nb-icon icon="edit"></nb-icon></a>
+          <button nbButton outline size="small" status="danger"><nb-icon icon="trash"></nb-icon></button>
+        </td>
+      </ng-container>
+    </table>
+  </nb-card-body>
+</nb-card>
