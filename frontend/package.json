@@ -68,7 +68,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.900.7",
+    "@angular-devkit/build-angular": "^17.1.2",
     "@angular/cli": "^9.0.4",
     "@angular/compiler-cli": "^9.0.4",
     "@angular/language-service": "9.0.4",
@@ -91,7 +91,7 @@
     "protractor": "5.1.2",
     "protractor-console-plugin": "^0.1.1",
     "rimraf": "2.6.1",
-    "stylelint": "7.13.0",
+    "stylelint": "16.2.1",
     "ts-node": "3.2.2",
     "tslint": "^5.7.0",
     "tslint-language-service": "^0.9.9",
